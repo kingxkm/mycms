@@ -1,4 +1,4 @@
-package org.kingxkm.myssm.web;
+package cn.hma.mycms.web;
 
 import java.text.DateFormat;
 import java.util.Date;

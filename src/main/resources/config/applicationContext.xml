@@ -17,7 +17,7 @@
 	<description>Spring公共配置</description>
 
 	<!-- 使用annotation 自动注册bean,并检查@Required,@Autowired的属性已被注入 过滤@Controller -->
-	<context:component-scan base-package="org.kingxkm.myssm" />
+	<context:component-scan base-package="cn.hma.mycms" />
 
 
 
@@ -42,7 +42,7 @@
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="jpaVendorAdapter" ref="hibernateJpaVendorAdapter" />
-		<property name="packagesToScan" value="org.kingxkm.myssm.model" />
+		<property name="packagesToScan" value="cn.hma.mycms.model" />
 		<property name="jpaProperties">
 			<props>
 				<prop key="hibernate.format_sql">true</prop>
@@ -56,7 +56,7 @@
 		<property name="showSql" value="true" />
 	</bean>
 	<!-- Spring Data Jpa配置 -->
-	<jpa:repositories base-package="org.kingxkm.myssm.dao"
+	<jpa:repositories base-package="cn.hma.mycms.dao"
 		transaction-manager-ref="transactionManager"
 		entity-manager-factory-ref="entityManagerFactory" />
 
@@ -80,12 +80,12 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<!-- 自动扫描entity目录, 省掉Configuration.xml里的手工配置 -->
-		<property name="typeAliasesPackage" value="org.kingxkm.myssm.model" />
+		<property name="typeAliasesPackage" value="cn.hma.mycms.model" />
 		<!-- 显式指定Mapper文件位置 -->
 		<property name="mapperLocations" value="classpath:/mappers/*Mapper.xml" />
 	</bean>
 	<!-- 扫描basePackage下所有以@MyBatisRepository标识的 接口 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="org.kingxkm.myssm.dao" />
+		<property name="basePackage" value="cn.hma.mycms.dao" />
 	</bean>
 </beans>

@@ -1,14 +1,16 @@
-package org.kingxkm.myssm.dao;
+package cn.hma.mycms.dao;
 
 import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.kingxkm.myssm.model.Article;
-import org.kingxkm.myssm.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import cn.hma.mycms.dao.UserDao;
+import cn.hma.mycms.model.Article;
+import cn.hma.mycms.model.User;
 
 import com.alibaba.fastjson.JSON;
 

@@ -1,4 +1,4 @@
-package org.kingxkm.myssm.dao;
+package cn.hma.mycms.dao;
 
 import java.util.List;
 import java.util.Map;
@@ -6,8 +6,9 @@ import java.util.Map;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
-import org.kingxkm.myssm.model.Article;
-import org.kingxkm.myssm.model.User;
+
+import cn.hma.mycms.model.Article;
+import cn.hma.mycms.model.User;
 
 public interface UserDao {
 	

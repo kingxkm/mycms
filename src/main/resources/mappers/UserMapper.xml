@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.kingxkm.myssm.dao.UserDao">
+<mapper namespace="cn.hma.mycms.dao.UserDao">
 	<!-- 为了返回list 类型而定义的returnMap -->
 	<resultMap type="User" id="resultListUser">
 		<id column="id" property="id" />

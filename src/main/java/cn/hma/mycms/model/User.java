@@ -1,4 +1,4 @@
-package org.kingxkm.myssm.model;
+package cn.hma.mycms.model;
 
 
 public class User {

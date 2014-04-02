@@ -1,6 +1,6 @@
-package org.kingxkm.myssm.dao;
+package cn.hma.mycms.dao;
 
-import org.kingxkm.myssm.model.Article;
+import cn.hma.mycms.model.Article;
 
 public interface ArticleDao {
 
