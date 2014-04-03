@@ -1,6 +1,5 @@
 package cn.hma.mycms.model;
 
-
 public class User {
 	private int id;
 	private int age;
@@ -10,6 +9,7 @@ public class User {
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
