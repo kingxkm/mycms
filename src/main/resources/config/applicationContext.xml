@@ -24,18 +24,21 @@
 	<context:property-placeholder
 		ignore-resource-not-found="true" location="classpath*:/config/jdbc.properties" />
 	<!-- 数据源配置,使用应用内的Tomcat JDBC连接池 -->
-	<bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource"
-		destroy-method="close">
-		<!-- Connection Info -->
-		<property name="driverClassName" value="${jdbc.driver}" />
-		<property name="url" value="${jdbc.url}" />
-		<property name="username" value="${jdbc.username}" />
-		<property name="password" value="${jdbc.password}" />
-		<property name="maxActive" value="${jdbc.pool.maxActive}" />
-		<property name="maxIdle" value="${jdbc.pool.maxIdle}" />
-		<property name="defaultAutoCommit" value="false" />
-	</bean>
+	<!-- <bean id="dataSource" class="org.apache.tomcat.jdbc.pool.DataSource" 
+		destroy-method="close"> Connection Info <property name="driverClassName" 
+		value="${jdbc.driver}" /> <property name="url" value="${jdbc.url}" /> <property 
+		name="username" value="${jdbc.username}" /> <property name="password" value="${jdbc.password}" 
+		/> <property name="maxActive" value="${jdbc.pool.maxActive}" /> <property 
+		name="maxIdle" value="${jdbc.pool.maxIdle}" /> <property name="defaultAutoCommit" 
+		value="false" /> </bean> -->
 
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc.driver}"></property>
+		<property name="username" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+		<property name="url" value="${jdbc.url}"></property>
+	</bean>
 
 	<!-- Jpa Entity Manager 配置 -->
 	<bean id="entityManagerFactory"
@@ -69,5 +72,5 @@
 	<tx:annotation-driven transaction-manager="transactionManager"
 		proxy-target-class="true" />
 
-	 
+
 </beans>

@@ -1,6 +1,4 @@
-package cn.hma.mycms.dao;
-
-import java.util.List;
+package cn.hma.mycms.service;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,20 +15,21 @@ import com.alibaba.fastjson.JSON;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:config/applicationContext.xml")
-public class TestCustomerDaoWithSpring_DATA_JPA {
+public class TestCustomerService {
 
 	@Autowired
-	private CustomerDao customerDao;
+	private CustomerService cs;
 
 	@Test
 	public void tgetCustomer() {
 
-		Customer c = customerDao.findByfirstname("张");
+		Customer c = cs.getCustomerById(2l);
 		System.out.println(JSON.toJSONString(c));
 		//System.out.println(JSON.toJSONString(customerDao.findOne((long) 2)));
 		
 	}
 
+	/*
 	@Test
 	public void findsFirstPageOfMatthews() throws Exception {
 
@@ -40,16 +39,16 @@ public class TestCustomerDaoWithSpring_DATA_JPA {
 		System.out.println(JSON.toJSONString(cs));
 	}
 
-	
+	*/
 	
 	 
 
 	@Test
 	public void tsaveCustomer() {
 		Customer u = new Customer();
-		u.setFirstname("马");
-		u.setLastname("雄杰");
-		customerDao.save(u);
+		u.setFirstname("马1");
+		u.setLastname("雄杰1");
+		cs.addUser(u);
 		System.out.println(JSON.toJSONString(u));
 		
 		
