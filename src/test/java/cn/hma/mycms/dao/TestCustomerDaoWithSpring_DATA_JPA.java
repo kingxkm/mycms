@@ -1,16 +1,14 @@
 package cn.hma.mycms.dao;
 
-import java.util.List;
+import javax.annotation.Resource;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import cn.hma.mycms.dao.CustomerDao;
 import cn.hma.mycms.model.Customer;
 
 import com.alibaba.fastjson.JSON;
@@ -19,7 +17,7 @@ import com.alibaba.fastjson.JSON;
 @ContextConfiguration(locations = "classpath:config/applicationContext.xml")
 public class TestCustomerDaoWithSpring_DATA_JPA {
 
-	@Autowired
+	@Resource
 	private CustomerDao customerDao;
 
 	@Test
